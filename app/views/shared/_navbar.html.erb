@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "/", class: "navbar-brand" do %> <%# Send to Home Page %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "https://res.cloudinary.com/dnczymjwi/image/upload/v1635126303/airbnb-clone/services-logo.png" %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,10 +15,10 @@
           <%= link_to "Home", "/", class: "nav-link" %> <%# Send to Home Page %>
         </li>
         <li class="nav-item">
-          <%= link_to "Provide s service", "#", class: "nav-link" %> <%# new_list_path (current_user) %>
+          <%= link_to "Provide s service", new_list_path(current_user), class: "nav-link" %> <%# new_list_path (current_user) %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Action", "#", class: "dropdown-item" %>
             <%= link_to "Another action", "#", class: "dropdown-item" %>
@@ -27,10 +27,10 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Provide s service", "#", class: "nav-link" %> <%# new_list_path (current_user) %>
+          <%= link_to "Provide a service", new_list_path(current_user), class: "nav-link" %> <%# new_list_path (current_user) %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign Up", new_user_session_path, class: "nav-link" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
         </li>
       <% end %>
     </ul>

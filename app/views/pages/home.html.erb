@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="page-wrap">
+  <div class="banner" style="background-image: url(<%=image_path "https://res.cloudinary.com/dnczymjwi/image/upload/v1635130769/airbnb-clone/purple-back-services.jpg" %>);">
+    <div class="banner-title">
+      <h1 class="text-center">Solve any kind of issues</h1>
+    </div>
+  </div>
+
+    <div class="container mt-2">
+    <h2 class="text-center">Services <i class="fas fa-home"></i></h2>
+
+    <div class="row cards mt-3">
+      <% List::SERVICES.each do |service| %>
+        <div class="col-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title text-center"><%= service %></h5>
+                <button type="button" class="btn btn-outline-primary">
+                  Learn more
+                </button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+</div>
