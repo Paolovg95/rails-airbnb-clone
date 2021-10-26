@@ -5,16 +5,20 @@
 
   <div class="form-inputs">
     <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
+    required: true,
+    autofocus: true,
+    input_html: { autocomplete: "email" }%>
+    <%= f.input :role,
+    required: true,
+    autofocus: true,
+    collection: User::ROLES %>
     <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+    required: true,
+    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+    input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+    required: true,
+    input_html: { autocomplete: "new-password" } %>
   </div>
 
   <div class="form-actions">
