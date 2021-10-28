@@ -1,5 +1,5 @@
 class List < ApplicationRecord
-  SERVICES = ["Electrical","Maintanance", "Painting", "Remodeling","Carpentry","Assembly"]
-  AREAS = ['Bathroom', 'Kitchen']
+  SERVICES = ["Electrical","Maintenance", "Painting", "Remodeling","Carpentry","Assembly"]
+
   belongs_to :user
 end
