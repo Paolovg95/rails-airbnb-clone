@@ -4,6 +4,8 @@ class CreateServices < ActiveRecord::Migration[6.0]
       t.string :service_title
       t.integer :price_rate
       t.string :location
+      t.references :user, null: false, foreign_key: true
+      t.references :list, null: false, foreign_key: true
 
       t.timestamps
     end

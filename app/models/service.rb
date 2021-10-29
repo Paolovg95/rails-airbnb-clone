@@ -1,5 +1,6 @@
 class Service < ApplicationRecord
-  belongs_to :lists
-  has_many :users
+  belongs_to :user
+  belongs_to :list
+
 
 end
