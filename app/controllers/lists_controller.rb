@@ -13,9 +13,20 @@ class ListsController < ApplicationController
     end
   end
 
+  def edit
+    @list = List.find(params[:id])
+    authorize @list
+  end
+
+  def update
+    @list = List.find(params[:id])
+    authorize @list
+    @list.update(list_params)
+  end
+
   private
 
   def list_params
-    params.require(:list).permit(:listing_type, :listing_title, :location, :price_rate, :listing_title, :user_id)
+    params.require(:list).permit(:listing_type, :listing_title, :location, :price_rate)
   end
 end

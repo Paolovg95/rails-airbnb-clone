@@ -8,4 +8,13 @@ class ListPolicy < ApplicationPolicy
   def create
     true
   end
+
+  # def edit
+  #   true
+  # end
+
+  def update?
+    #  if I am the owner of the list OR if I am the admin
+    record.user == user || user.admin
+  end
 end

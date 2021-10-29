@@ -8,10 +8,10 @@
     required: true,
     autofocus: true,
     input_html: { autocomplete: "email" }%>
-    <%= f.input :role,
+    <%= f.input :admin,
     required: true,
-    autofocus: true,
-    collection: User::ROLES %>
+    autofocus: true
+    %>
     <%= f.input :password,
     required: true,
     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
