@@ -9,18 +9,18 @@
     <h2 class="text-center">Services <i class="fas fa-home"></i></h2>
 
     <div class="row cards mt-3">
-      <% List::SERVICES.each do |service| %>
-          <div class="col-4">
-            <div class="card mb-4">
-              <%= cl_image_tag "airbnb-clone/#{service}.png", class: "home-images"%>
-              <div class="card-body">
-                <h5 class="card-title text-center"><%= service %></h5>
-                <button type="button" class="btn btn-outline-primary">
-                  Learn more
-                </button>
+        <% List::SERVICES.each do |service| %>
+            <div class="col-4">
+              <div class="card mb-4">
+                <%= cl_image_tag "airbnb-clone/#{service}.png", class: "home-images"%>
+                <div class="card-body">
+                  <h5 class="card-title text-center"><%= service %></h5>
+                  <button type="button" class="btn btn-outline-primary">
+                    <%= link_to "Learn more", list_path(list) %>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-      <% end %>
+        <% end %>
     </div>
 </div>
