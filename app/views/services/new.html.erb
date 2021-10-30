@@ -2,7 +2,7 @@
   <div class="col-6">
     <h2>Become a provider</h2>
     <%= simple_form_for([@list,@service]) do |f| %>
-      <%= f.association :list, collection: List::LIST_OF_SERVICES %>
+      <%= f.association :list, label_method: :listing_type, value_method: :id %>
       <%= f.input :service_title %>
       <%= f.input :location %>
       <%= f.input :price_rate %>
