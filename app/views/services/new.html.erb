@@ -1,9 +1,9 @@
 <div class="row justify-content-center">
   <div class="col-6">
     <h2>Become a provider</h2>
-    <%= simple_form_for([@user,@list]) do |f| %>
-      <%= f.input :listing_type, collection: List::SERVICES %>
-      <%= f.input :listing_title %>
+    <%= simple_form_for([@list,@service]) do |f| %>
+      <%= f.association :list, collection: List::LIST_OF_SERVICES %>
+      <%= f.input :service_title %>
       <%= f.input :location %>
       <%= f.input :price_rate %>
       <%= f.submit %>

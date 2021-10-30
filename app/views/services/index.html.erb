@@ -1,0 +1,13 @@
+<% @list.services.each do |service| %>
+  <div class="col-4">
+    <div class="card mb-4 h-100">
+      <%# Add image (User profile pic) for the card %>
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= service.title %>
+        </h5>
+        <span><%= service.price_rate %></span>
+        <p class="card-text"><%= service.location %></p>
+      </div>
+    </div>
+  </div>
