@@ -5,11 +5,10 @@
         <div class="card mb-4">
           <%= cl_image_tag "airbnb-clone/1.png", class: "service-images"%>
           <div class="card-body">
-            <h6 class="card-title text-center">Service: <%= service.service_title %>
-            <p class="card-text"><%= service.price_rate %></p>
-              Location: <%= service.location %>
-            </h6>
-            <button type="button" class="btn btn-primary">
+            <h6 class="card-title text-center font-weight-bold mt-2">Service: <%= service.service_title %>
+            <p class="card-text mt-2 mb-2">$<%= service.price_rate %> per hour</p>
+              Location: <%= service.location %></h6>
+            <button type="button" class="btn btn-primary mt-2">
               <%= link_to "Book Service" %>
             </button>
           </div>
