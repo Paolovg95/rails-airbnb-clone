@@ -2,7 +2,6 @@ class ServicesController < ApplicationController
   # before_action :find_list, only: [:new, :create]
   def new
     @service = Service.new
-
   end
 
   def create
@@ -17,6 +16,7 @@ class ServicesController < ApplicationController
   end
 
   private
+
   def find_list
     @list = List.find_by(params[:listing_type])
   end
@@ -24,5 +24,4 @@ class ServicesController < ApplicationController
   def service_params
     params.require(:service).permit(:service_title, :price_rate, :location, :user_id)
   end
-
 end

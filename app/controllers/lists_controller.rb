@@ -1,8 +1,6 @@
 class ListsController < ApplicationController
 
-   def new
+  def new
     @list = List.new
   end
-
-
 end

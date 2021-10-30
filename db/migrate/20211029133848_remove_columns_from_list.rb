@@ -4,6 +4,6 @@ class RemoveColumnsFromList < ActiveRecord::Migration[6.0]
     remove_column :lists, :price_rate
     remove_column :lists, :listing_title
     remove_reference :lists, :user, index: true, foreign_key: true
-    remove_reference :lists, :service, index: true, foreign_key: true
+    # remove_reference :lists, :service, index: true, foreign_key: true
   end
 end
