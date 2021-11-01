@@ -1,8 +1,9 @@
 class ListsController < ApplicationController
-
   def new
     @list = List.new
-  end 
+    authorize @list
+  end
+
   def index
     @lists = List.all
 

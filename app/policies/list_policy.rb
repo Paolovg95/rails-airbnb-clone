@@ -28,5 +28,4 @@ class ListPolicy < ApplicationPolicy
       false
     end
   end
-
 end
