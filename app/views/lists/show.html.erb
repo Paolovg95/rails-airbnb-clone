@@ -1,32 +1,39 @@
-<div class="container">
-    <div class="row">
+<div class="container mt-4 ml-4">
+    <div class="d-flex justify-content-around">
       <div class="col-6">
       <!-- column 1 -->
+
             <div class="row">
               <% @list.services.each do |service| %>
-                <div class="col-sm-6">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title"><%= service.service_title %></h5>
-                      <p class="card-text"><%= service.price_rate %> per hour</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="col-sm-6 pb-3">
+                    <div class="card" style="height: 200px;">
+                      <div class="card-body">
+                        <h5 class="card-title">Service offered: <%= service.service_title %></h5>
+                        <p class="card-text">Price: $<%= service.price_rate %> per hour</p>
+                        <a href="#" class="btn btn-outline-primary">Book service</a>
+                      </div>
                     </div>
-                  </div>
                 </div>
               <% end %>
             </div>
       </div>
+      <!-- column 1 -->
 
       <div class="col-6">
       <!-- column 2 -->
 
         <!-- Geocoded map -->
-        <div id="map"
-            style="width: 100%; height: 400px;"
-            data-markers="<%= @markers.to_json %>"
-            data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        <div id="map-box" class="container mr-3">
+          <div id="map"
+              style="width: 100%; height: 400px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
+
         <!-- Geocoded map -->
+
+      <!-- column 2 -->
       </div>
     </div>
 </div>
