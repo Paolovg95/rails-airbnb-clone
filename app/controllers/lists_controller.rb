@@ -18,7 +18,6 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @service = Service.find(params[:id])
   end
 
 end
