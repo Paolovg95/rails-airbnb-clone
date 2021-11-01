@@ -29,6 +29,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'pundit'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+# Geocoder gem
+gem 'geocoder'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
