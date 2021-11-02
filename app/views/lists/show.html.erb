@@ -1,3 +1,11 @@
+    <div class="container ml-5 my-5">
+
+    <h2> <%= @list.listing_type %> services offered close to your area</h2>
+
+    <p> Find the closest <b>top rated</b> professional for your project </p>
+    </div>
+
+
     <div class="container mt-4 ml-4">
     <div class="d-flex justify-content-around">
       <div class="col-6">
@@ -10,7 +18,9 @@
                       <div class="card-body">
                         <h5 class="card-title">Service offered: <%= service.service_title %></h5>
                         <p class="card-text">Price: $<%= service.price_rate %> per hour</p>
+                    <div>
                         <a href="#" class="btn btn-outline-primary">Book service</a>
+                    </div>
                       </div>
                     </div>
                 </div>
