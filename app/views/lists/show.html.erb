@@ -9,7 +9,7 @@
             <p class="card-text mt-2 mb-2">$<%= service.price_rate %> per hour</p>
               Location: <%= service.location %></h6>
             <button type="button" class="btn btn-primary mt-2">
-              <%= link_to "Book Service" %>
+              <%= link_to "Book Service", service_path(service)%>
             </button>
           </div>
         </div>
