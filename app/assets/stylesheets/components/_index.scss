@@ -9,5 +9,18 @@
 @import "map";
 
 .page-wrap {
-  background-color: rgb(255, 255, 255);
+  background-color: white
+}
+.container {
+  font-family: 'Bebas Neue';
+}
+h2 {
+  font-size: 45px;
+  font-weight: bolder;
+  font-family: 'Bebas Neue';
+}
+.containe-title {
+  font-size: 20px;
+  color: rgb(109, 107, 107);
+  font-weight: lighter;
 }

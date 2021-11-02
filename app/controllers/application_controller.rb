@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_permitted_parameters, only: [:create]
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit
