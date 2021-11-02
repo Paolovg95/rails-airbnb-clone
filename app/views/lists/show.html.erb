@@ -1,3 +1,16 @@
+<div class="container mt-5">
+  <div class="row cards mt-5">
+    <% @list.services.each do |service| %>
+      <div class="col-4">
+        <div class="card mb-4">
+          <%= cl_image_tag "airbnb-clone/1.png", class: "service-images"%>
+          <div class="card-body">
+            <h6 class="card-title text-center font-weight-bold mt-2">Service: <%= service.service_title %>
+            <p class="card-text mt-2 mb-2">$<%= service.price_rate %> per hour</p>
+              Location: <%= service.location %></h6>
+            <button type="button" class="btn btn-primary mt-2">
+              <%= link_to "Book Service", service_path(service)%>
+            </button>
 <div class="container mt-4 ml-4">
     <div class="d-flex justify-content-around">
       <div class="col-6">
@@ -59,4 +72,5 @@
       <%end %>
     </div>
   </div>
-  -->
+</div>
+

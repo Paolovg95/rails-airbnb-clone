@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <div class="row cards mt-5">
+    <% @service.bookings.each do |bookings| %>
+      <div class="col-4">
+        <div class="card mb-4">
+          <%= cl_image_tag "airbnb-clone/1.png", class: "service-images"%>
+          <div class="card-body">
+            <h6 class="card-title text-center font-weight-bold mt-2">Service:
+            <p class="card-text mt-2 mb-2">$ per hour</p>
+              Location:
+            <button type="button" class="btn btn-primary mt-2">
+              <%= link_to "Book Service", new_booking_path(service)%>
+            </button>
+          </div>
+        </div>
+      </div>
+    <%end %>
+  </div>
+</div>
+
+ <div class="booking-form-new">
+    <%= simple_form_for [@service, @booking] do |f| %>
+      <%# <%= f.input :start_date, label: "Start Date", as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%# <%= f.submit "Book!", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div style="margin-top: 25px; margin-bottom:25px">
+    <hr>
+  </div>
+
+  <div class="booking-show-host-info">
+    <p>Hosted by ....</p>
+  </div>

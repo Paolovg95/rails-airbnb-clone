@@ -14,8 +14,12 @@ class ServicesController < ApplicationController
     end
   end
 
+  def show
+    @service = Service.find(params[:id])
+  end
+
   private
-  
+
   def service_params
     params.require(:service).permit(:service_title, :price_rate, :location, :list_id)
   end
