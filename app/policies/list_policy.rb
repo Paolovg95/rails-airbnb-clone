@@ -6,7 +6,7 @@ class ListPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.admin = true
   end
 
   def show?
@@ -14,19 +14,20 @@ class ListPolicy < ApplicationPolicy
   end
 
   def edit?
-    if user == current_user
-      true
-    else
-      false
-    end
+    user.admin = true
+    # if user == current_user
+    #   true
+    # else
+    #   false
+    # end
   end
 
   def update?
-    if user == current_user
-      true
-    else
-      false
-    end
+    user.admin = true
+    # if user == current_user
+    #   true
+    # else
+    #   false
+    # end
   end
-
 end
