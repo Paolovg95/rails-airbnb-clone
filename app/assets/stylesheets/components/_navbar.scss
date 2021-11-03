@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #dadddf;
+  font-family: 'Bebas Neue';
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 70px;
+  margin-top: 10px;
+  margin-left: 80px;
+}
+.nav-provide-link {
+  color: black;
+}
+.nav-provide-link:hover {
+ color: black;
+ text-decoration: none;
 }

@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon text-white">
   <%= link_to "/", class: "navbar-brand" do %> <%# Send to Home Page %>
     <%= image_tag "https://res.cloudinary.com/dnczymjwi/image/upload/v1635126303/airbnb-clone/services-logo.png" %>
   <% end %>
@@ -14,8 +14,16 @@
         <li class="nav-item active">
           <%= link_to "Home", "/", class: "nav-link" %> <%# Send to Home Page %>
         </li>
+        <li class="nav-item active">
+          <%= link_to "About Us", "/", class: "nav-link" %> <%# Send to Home Page %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Contact", "/", class: "nav-link" %> <%# Send to Home Page %>
+        </li>
         <li class="nav-item">
-          <%= link_to "Provide a service", new_service_path, class: "nav-link" %> <%# new_list_path (current_user) %>
+          <button class="btn btn-outline-info btn-lg">
+            <%= link_to "Provide a service", new_service_path, class: "nav-provide-link" %> <%# new_list_path (current_user) %>
+          </button>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://res.cloudinary.com/dnczymjwi/image/upload/v1635256983/airbnb-clone/green-guy-icon_z30qdn.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -27,10 +35,14 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Provide a service", new_service_path, class: "nav-link" %> <%# new_list_path (current_user) %>
+          <button class="btn btn-outline-info btn-lg">
+            <%= link_to "Provide a service", new_service_path, class: "nav-provide-link" %> <%# new_list_path (current_user) %>
+          </button>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+          <button class="btn btn-outline-dark btn-lg">
+            <%= link_to "Sign Up", new_user_registration_path, class: "dark-font-link" %>
+          </button>
         </li>
       <% end %>
     </ul>

@@ -1,26 +1,41 @@
 <div class="page-wrap">
-  <div class="banner" style="background-image: url(<%= cl_image_path "airbnb-clone/Home-banner.jpg"%>);">
-    <div class="banner-title">
-      <h1 class="text-center">Helping Homeowners Solve Issues</h1>
+  <div class="banner bg-white">
+    <div class="banner-body align-items-center">
+      <div class="banner-text mr-4 pl-4 pr-4">
+        <p>Quality work & Quick service </p>
+        <p class="lead">Sign up for free today</p>
+        <button class="btn btn-outline-info btn-lg">
+          <%= link_to "Sign Up", new_user_registration_path, class: "dark-font-link" %>
+        </button>
+      </div>
+      <div class="banner-image pl-4">
+        <%= cl_image_tag "airbnb-clone/g-banner3.jpg" %>
+      </div>
     </div>
   </div>
 
-    <div class="container mt-5">
-    <h2 class="text-center">Find a professional in your area! <i class="fas fa-home"></i></h2>
-
-    <div class="row cards mt-5">
-        <% @lists.each do |list| %>
-              <div class="col-4">
-                <div class="card mb-4">
-                  <%= cl_image_tag "airbnb-clone/#{list.listing_type}.png", class: "home-images"%>
-                  <div class="card-body">
-                    <h5 class="card-title text-center"><%= list.listing_type %></h5>
-                    <button type="button" class="btn btn-primary">
-                        <%= link_to "Learn more", list_path(list) %>
-                    </button>
-                  </div>
-                </div>
-              </div>
-        <% end %>
+  <div class="container mt-5">
+    <div class="container-title">
+      <h2 class="text-center">Find a professional in your area!</h2>
+      <p class="text-center">Everything you need to get on the same page, explore the wide variety of professionals.</p>
     </div>
+    <div class="row cards mt-5">
+      <% @lists.each do |list| %>
+        <div class="col-4">
+          <div class="card mb-4 align-items-center">
+            <%= cl_image_tag "airbnb-clone/#{list.listing_type}.png", class: "home-images"%>
+            <div class="card-body">
+              <h5 class="card-title text-center"><%= list.listing_type %></h5>
+              <button type="button" class="btn btn-primary">
+                <%= link_to "Learn more", list_path(list), class: "dark-font-link" %>
+              </button>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+   </div>
+  <div>
+
+  </div>
 </div>

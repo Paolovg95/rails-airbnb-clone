@@ -1,8 +1,17 @@
 .banner {
-  color: black;
-  font-size: 40px;
-  font-weight:bolder;
-  background-size: cover;
-  background-position: center;
-  padding: 250px 0;
+  display: flex;
+  .banner-body {
+    display: flex;
+    margin-left: 100px;
+    justify-content:space-evenly;
+    .banner-text {
+      font-size: 45px;
+      font-weight: bold;
+      color: black;
+      font-family: 'Bebas Neue';
+      .banner-image {
+        margin-left: 50px;
+      }
+    }
+  }
 }
