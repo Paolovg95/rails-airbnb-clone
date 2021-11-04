@@ -1,31 +1,44 @@
-<div class="page-wrap">
-  <div class="banner bg-white">
-    <div class="banner-body align-items-center">
-      <div class="banner-text mr-4 pl-4 pr-4">
-        <p>Quality work & Quick service </p>
-        <p class="lead">Sign up for free today</p>
-        <button class="btn btn-outline-info btn-lg">
-          <%= link_to "Sign Up", new_user_registration_path, class: "dark-font-link" %>
-        </button>
-      </div>
-      <div class="banner-image pl-4">
-        <%= cl_image_tag "airbnb-clone/g-banner3.jpg" %>
+  <div class="page-wrap">
+    <div class="banner bg-white">
+      <div class="banner-body align-items-center">
+        <div class="banner-text mr-4 pl-4 pr-4">
+          <p>Quality work & Quick service </p>
+          <p class="sign-up">Sign up for free today</p>
+          <button class="btn btn-outline-info btn-lg">
+            <%= link_to "Sign Up", new_user_registration_path, class: "dark-font-link" %>
+          </button>
+        </div>
+        <div class="banner-image pl-4">
+          <%= cl_image_tag "airbnb-clone/g-banner3.jpg" %>
+        </div>
       </div>
     </div>
-  </div>
+
+    <div class="container-solutions mb-4 bg-white">
+      <h2 class="text-center mb-2">Everything you need on the same page!</h2>
+      <div class="row cards-solutions">
+        <% List::SOLUTIONS.each do |solution| %>
+          <div class="col-4">
+            <div class="solution-card">
+              <%= cl_image_tag("airbnb-clone/#{solution}.png", :width => 150, :height => 0, class: "solution-images")%>
+              <p>Location Tracking: Wide range of professionals anywhere you are.</p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
 
   <div class="container mt-5">
     <div class="container-title">
-      <h2 class="text-center">Find a professional in your area!</h2>
-      <p class="text-center">Everything you need to get on the same page, explore the wide variety of professionals.</p>
+      <h2 class="text-center mb-2">Everything you need on the same page!</h2>
     </div>
     <div class="row cards mt-5">
       <% @lists.each do |list| %>
         <div class="col-4">
           <div class="card mb-4 align-items-center">
             <%= cl_image_tag "airbnb-clone/#{list.listing_type}.png", class: "home-images"%>
-            <div class="card-body">
-              <h5 class="card-title text-center"><%= list.listing_type %></h5>
+            <div class="card-body text-center">
+              <h5><%= list.listing_type %></h5>
               <button type="button" class="btn btn-primary">
                 <%= link_to "Learn more", list_path(list), class: "dark-font-link" %>
               </button>
@@ -44,21 +57,21 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Useful Links</h5>
+                <h5 class="black-text">Useful Links</h5>
                   <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Our COVID-19 Efforts</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Legal Notice</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Cookie Policy</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Privacy Policy</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Our COVID-19 Efforts</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Legal Notice</a></li>
+                  <li><a class="black-text text-lighten-3" href="#!">Cookie Policy</a></li>
                 </ul>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Questions? Get in touch!</h5>
+                <h5 class="black-text">Questions? Get in touch!</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-whatsapp"></i></a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
+                  <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-whatsapp"></i></a></li>
+                  <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
+                  <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
                 </ul>
               </div>
             </div>

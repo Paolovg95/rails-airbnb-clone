@@ -1,14 +1,14 @@
 .btn-primary {
   color: black;
-  background-color: rgb(255, 140, 0);
-  border-color: #000000;
+  background-color: $yellow-orange;
+  border: none;
   font-size: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
 }
 .btn-outline-dark {
   margin: 2px;
-  border-width: 1px;
+  border: none;
   border-radius: 10px;
 }
 .btn-outline-dark:hover {
@@ -17,7 +17,7 @@
 
 .btn-primary:hover {
   color: #000000;
-  background-color: #f7cd80;
+  background-color: $mango-tango;
   border:black;
 }
 
