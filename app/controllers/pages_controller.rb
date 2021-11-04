@@ -4,4 +4,10 @@ class PagesController < ApplicationController
   def home
     @lists = List.all
   end
+
+  def about_us
+  end
+
+  def contact_us
+  end
 end
