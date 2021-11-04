@@ -1,5 +1,9 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
+  end
+
   def create
     @service = Service.find(params[:service_id])
     @booking = Booking.new(booking_params)
@@ -11,6 +15,7 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
 
   # def edit
   #   set_booking
