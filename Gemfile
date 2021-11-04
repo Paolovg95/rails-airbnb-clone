@@ -31,6 +31,8 @@ gem 'pundit'
 gem 'bootsnap', '>= 1.4.2', require: false
 # Geocoder gem
 gem 'geocoder'
+# Gemfile
+gem 'pg_search'
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
