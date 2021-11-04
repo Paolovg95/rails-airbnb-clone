@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   resources :lists, only: [:show, :index]
 
-  resources :services do
+  resources :services ,only: [:new,:create,:show] do
     resources :bookings, only: [:create]
   end
 
+  resources :bookings, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

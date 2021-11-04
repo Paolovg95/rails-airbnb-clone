@@ -1,7 +1,7 @@
 <%# <div class="booking-show-container">
   <% days = @booking.end_date.day - @booking.start_date.day %>
   <%# <h3>Confirmed: <%= days %> <%# days on <%= @booking.service.name %>
-  <div class="booking-show-status">
+  <div class="booking-show">
     <p>Booked by <%= @booking.user.email %><%= @booking.created_at.strftime(" on %m/%d/%Y") %> <%= @booking.created_at.strftime("at %I:%M%p") %></p>
     <%# <% if @booking.status == 'confirmed' %>
       <%# <p><b>ACCEPTED</b></p>
@@ -9,6 +9,7 @@
       <%# <p><b>BOOKED!</b></p>
     <% end %>
   </div>
+
   <div class="booking-show-boxes">
     <div class="booking-details">
       <div class="booking-confirm-date-range">
