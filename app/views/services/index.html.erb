@@ -1,0 +1,25 @@
+<div class="text-center">
+  <h2>Here are all the <strong>Services</strong> you are sharing!</h2>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row cards mt-5">
+      <% @services.each do |service| %>
+        <div class="col-4">
+          <div class="card mb-4 align-items-center">
+            <%# <%= cl_image_tag "airbnb-clone/#{list.listing_type}.png", class: "home-images"%>
+            <div class="card-body">
+              <h4 class="card-title text-center"><%= service.service_title %></h4>
+              <h4 class="card-text"> Location: <%= service.location %></h4>
+              <h4 class="card-text"> Price/hour: <%= service.price_rate %></h4>
+              <%# <button type="button" class="btn btn-primary">
+                <%= link_to "Learn more", list_path(list), class: "dark-font-link" %>
+              <%# </button> %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+   </div>
+  <div>

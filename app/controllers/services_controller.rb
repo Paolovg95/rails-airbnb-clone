@@ -1,5 +1,9 @@
 class ServicesController < ApplicationController
 
+  def index
+    @services = Service.where(user_id: current_user.id)
+  end
+
   def new
     @service = Service.new
   end
@@ -16,6 +20,7 @@ class ServicesController < ApplicationController
 
   def show
     @service = Service.find(params[:id])
+    @booking = Booking.new
   end
 
   private
