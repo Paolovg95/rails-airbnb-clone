@@ -26,8 +26,8 @@ class ServicesController < ApplicationController
 
     @markers = @services.geocoded.map do |service|
       {
-        lat: service.latitude,
-        lng: service.longitude
+        lat: service.location.latitude,
+        lng: service.location.longitude
       }
     end
   end
