@@ -21,6 +21,15 @@ class ServicesController < ApplicationController
   def show
     @service = Service.find(params[:id])
     @booking = Booking.new
+
+    @services = Service.all
+
+    @markers = @services.geocoded.map do |service|
+      {
+        lat: service.latitude,
+        lng: service.longitude
+      }
+    end
   end
 
   private
