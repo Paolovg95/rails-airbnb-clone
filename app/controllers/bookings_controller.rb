@@ -1,29 +1,21 @@
 class BookingsController < ApplicationController
 
-  # def index
-  #   @bookings = policy_scope(Booking)
-  # end
-
-  # def show
-  #   set_booking
-  #   # authorize @booking
-  # end
-
-  def new
-    @booking = Booking.new
+  def index
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def create
+    @service = Service.find(params[:service_id])
     @booking = Booking.new(booking_params)
-    @booking.service = Service.find(params[:id])
+    @booking.service = @service
     @booking.user = current_user
-    # authorize @booking
-    if @booking.save
-      redirect_to booking_path(@booking), notice: 'Booking successful'
+    if @booking.save!
+      redirect_to root_path, notice: 'Booking successful'
     else
       render :new
     end
   end
+
 
   # def edit
   #   set_booking

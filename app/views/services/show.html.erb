@@ -1,27 +1,30 @@
-<div class="container mt-5">
-  <div class="row cards mt-5">
-    <% @service.bookings.each do |bookings| %>
-      <div class="col-4">
-        <div class="card mb-4">
-          <%= cl_image_tag "airbnb-clone/1.png", class: "service-images"%>
-          <div class="card-body">
-            <h6 class="card-title text-center font-weight-bold mt-2">Service:
-            <p class="card-text mt-2 mb-2">$ per hour</p>
-              Location:
-            <button type="button" class="btn btn-primary mt-2">
-              <%= link_to "Book Service", new_booking_path(service)%>
-            </button>
+  <div class="container mt-4 ml-4">
+      <div class= "row cards-services">
+        <div class="col-sm-6 pb-4">
+          <div class="card align-items-center">
+            <%= cl_image_tag "airbnb-clone/1.png", class: "profile-pic-services-display"%>
+            <div class="card-body">
+              <h4><%= @service.service_title %></h4>
+              <h5 class="card-text"> Location: <%= @service.location %></h5>
+              <h5 class="card-text">Price/hour: <%= @service.price_rate %></h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 pb-4">
+          <div id="map-box" class="container mr-3">
+            <div id="map"
+              style="width: 100%; height: 400px;"
+              data-markers="<%= @markers.to_json %>"
+              data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
           </div>
         </div>
       </div>
-    <%end %>
   </div>
-</div>
-
-  <div style="margin-top: 25px; margin-bottom:25px">
-    <hr>
-  </div>
-
-  <div class="booking-show-host-info">
-    <p>Hosted by ....</p>
-  </div>
+    <h4>Select the dates you're available to book this service</h4>
+      <%= simple_form_for([@service,@booking]) do |f| %>
+        <%= f.input :start_date, label: "Start Date", as: :date, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, label: "End Date", as: :date, input_html: {class: "datepicker"} %>
+        <%= f.submit "Book!", class: "btn btn-primary" %>
+      <% end %>

@@ -1,7 +1,8 @@
 .home-images {
-  height: 80px;
-  width: 120px;
+  height: 50px;
+  width: 80px;
   margin-top: 10px;
+  margin-left: 10px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 .profile-pic-services-display {
@@ -9,4 +10,7 @@
   width: 120px;
   margin-top: 10px;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+.solution-images {
+  padding-bottom: 10px;
 }

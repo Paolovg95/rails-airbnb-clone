@@ -1,10 +1,10 @@
   <div class="container mt-4 ml-4">
     <div class="title text-center">
       <h2 class="text-center"><%= @list.listing_type %> services</h2>
-      <div class="d-flex justify-content-around">
+      <div class="d-flex justify-space-between">
 
         <div class="col-md-6">
-          <div class="row cards text-center">
+          <div class="row cards-services text-center">
             <% @list.services.each do |service| %>
               <div class="col-sm-6 pb-3">
                   <div class="card align-items-center">
@@ -14,10 +14,10 @@
                       <h5><%= service.service_title %></h5>
                       <p class="card-text"> Location: <%= service.location %></p>
                       <p class="card-text"> Price/hour: <%= service.price_rate %></p>
-                      <button type="button" class="btn btn-primary">
+                    </div>
+                      <button type="button" class="btn btn-primary mb-3">
                         <%= link_to "Book service",  service_path(service), class: "dark-font-link" %>
                       </button>
-                    </div>
                   </div>
               </div>
             <% end %>

@@ -6,11 +6,11 @@
     justify-content:space-evenly;
     .banner-text {
       font-size: 45px;
-      font-weight: bold;
+      font-weight: lighter;
       color: black;
-      font-family: 'Bebas Neue';
+      font-family: $body-font;
       .banner-image {
-        margin-left: 50px;
+        margin-left: 80px;
       }
     }
   }

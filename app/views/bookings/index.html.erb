@@ -1,18 +1,14 @@
 <h1 class="title">Your bookings</h1>
 <div class="cards">
   <% @bookings.each do |booking| %>
+
       <div class="service">
         <%# <%= add service image %>
         <div class="service-info">
           <div>
-            <h2><%= link_to booking.service, booking_path(booking.service, booking) %></h2>
-            <%# <p>Start: <%= booking.start_date %>
-            <%# <p>Finish: <%= booking.end_date %>
-            <% if policy(booking).destroy? %>
-              <%= link_to "CANCEL BOOKING", booking_path(booking),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-            <% end %>
+            <p>Service</p>
+            <p>Start: <%= booking.start_date %>
+            <p>Finish: <%= booking.end_date %>
           </div>
           <%# <h2 class="price">Total price: <%= (booking.end_date - booking.start_date) * booking.service.price %>
         </div>
