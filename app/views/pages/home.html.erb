@@ -16,7 +16,7 @@
 
     <div class="container-solutions mb-4 bg-white">
       <h2 class="text-center mb-2">Everything you need on the same page!</h2>
-      <div class="row cards-solutions">
+      <div class="row cards-solutions" data-aos="zoom-out-up">
         <% List::SOLUTIONS.each do |solution| %>
           <div class="col-4">
             <div class="solution-card">
@@ -32,7 +32,7 @@
     <div class="container-title">
       <h2 class="text-center mb-2">Everything you need on the same page!</h2>
     </div>
-    <div class="row cards mt-5">
+    <div class="row cards mt-5" data-aos="flip-up">
       <% @lists.each do |list| %>
         <div class="col-4">
           <div class="card mb-4 align-items-center">
@@ -57,29 +57,27 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="black-text">Useful Links</h5>
-                  <ul>
+                <h5 class="black-text"><em><b>Useful Links</b></em></h5>
+                <ul>
                   <li><a class="black-text text-lighten-3" href="#!">Privacy Policy</a></li>
                   <li><a class="black-text text-lighten-3" href="#!">Our COVID-19 Efforts</a></li>
                   <li><a class="black-text text-lighten-3" href="#!">Legal Notice</a></li>
                   <li><a class="black-text text-lighten-3" href="#!">Cookie Policy</a></li>
                 </ul>
               </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="black-text">Questions? Get in touch!</h5>
-                <ul>
-                  <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-whatsapp"></i></a></li>
-                  <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-twitter"></i></a></li>
-                  <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                  <li><a class="black-text text-lighten-3" href="#!"><i class="fab fa-instagram"></i></a></li>
-                </ul>
+              <div class="col l4 offset-l2 s12" id="social_icons">
+                <h5 class="black-text"><em><b>Questions? Get in touch!</b></em></h5>
+                  <a class="black-text text-lighten-3" style="padding-left:18px;" href="#!"><i class="fab fa-whatsapp fa-2x"></i></a>
+                  <a class="black-text text-lighten-3" style="padding-left:12px;" href="#!"><i class="fab fa-twitter fa-2x"></i></a>
+                  <a class="black-text text-lighten-3" style="padding-left:12px;" href="#!"><i class="fab fa-facebook-f fa-2x"></i></a>
+                  <a class="black-text text-lighten-3" style="padding-left:12px;" href="#!"><i class="fab fa-instagram fa-2x"></i></a>
               </div>
             </div>
           </div>
           <div class="footer-copyright">
             <div class="container">
-            © 2021 Batch-686. All Rights Reserved.
-            <a class="grey-text text-lighten-4 right" href="#!">Terms and Conditions</a>
+            <b>© 2021 Batch-686. All Rights Reserved.</b>
+            <a class="grey-text text-lighten-4 right" href="#!"><b> Terms and Conditions <b><i class="fas fa-star"></i></a>
             </div>
           </div>
         </footer>

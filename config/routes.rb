@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :lists, only: [:show, :index]
 
-  resources :services ,only: [:new,:create,:show] do
+  resources :services ,only: [:new,:create,:show, :index] do
     resources :bookings, only: [:create]
   end
 
