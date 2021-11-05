@@ -2,7 +2,11 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    @services = @list.services
+    if params[:query].present?
+      @services = Service.global(params[:query]).where(list_id: @list.id)
+    else
+      @services = Service.all.where(list_id: @list.id)
+    end
     @markers = @services.geocoded.map do |service|
       {
         lat: service.latitude,
@@ -20,12 +24,6 @@ class ListsController < ApplicationController
       }
     end
 
-    # @markers = @lists.geocoded.map do |list|
-    #   {
-    #     lat: list.latitude,
-    #     lng: list.longitude
-    #   }
-    # end
-    # the `geocoded` scope filters only lists with coordinates (latitude & longitude)
+
   end
 end

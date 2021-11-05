@@ -1,3 +1,15 @@
+<%= form_tag list_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Enter a location or title"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+
+
   <div class="container mt-4 ml-4">
     <div class="title text-center">
       <h2 class="text-center"><%= @list.listing_type %> services</h2>
@@ -5,7 +17,7 @@
 
         <div class="col-md-6">
           <div class="row cards-services text-center">
-            <% @list.services.each do |service| %>
+            <% @services.each do |service| %>
               <div class="col-sm-6 pb-3">
                   <div class="card align-items-center">
                     <%= cl_image_tag "airbnb-clone/1.png", class: "profile-pic-services-display"%>
