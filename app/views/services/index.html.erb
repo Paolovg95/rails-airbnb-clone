@@ -3,7 +3,7 @@
 </div>
 
 
-<div class="container mt-5">
+  <div class="container mt-5">
     <div class="row cards mt-5">
       <% @services.each do |service| %>
         <div class="col-4">
@@ -13,9 +13,9 @@
               <h4 class="card-title text-center"><%= service.service_title %></h4>
               <h4 class="card-text"> Location: <%= service.location %></h4>
               <h4 class="card-text"> Price/hour: <%= service.price_rate %></h4>
-              <%# <button type="button" class="btn btn-primary">
+              <button type="button" class="btn btn-primary">
                 <%= link_to "Learn more", list_path(list), class: "dark-font-link" %>
-              <%# </button> %>
+              </button>
             </div>
           </div>
         </div>
