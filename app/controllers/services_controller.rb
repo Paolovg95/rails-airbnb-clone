@@ -30,6 +30,7 @@ class ServicesController < ApplicationController
         lng: service.longitude
       }
     end
+
   end
 
   private
