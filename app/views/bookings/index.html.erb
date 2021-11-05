@@ -1,12 +1,11 @@
 <h1 class="title">Your bookings</h1>
 <div class="cards">
   <% @bookings.each do |booking| %>
-
       <div class="service">
         <%# <%= add service image %>
         <div class="service-info">
           <div>
-            <p>Service</p>
+            <p>Service <%= booking.service.service_title %></p>
             <p>Start: <%= booking.start_date %>
             <p>Finish: <%= booking.end_date %>
           </div>
