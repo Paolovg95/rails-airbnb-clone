@@ -16,8 +16,6 @@
                   <%= cl_image_tag "https://res.cloudinary.com/dnczymjwi/image/upload/v1635257040/airbnb-clone/1.png", width: 100, height: 100 %>
                 <% end %>
               </div>
-
-
               <div class="card-body py-4">
                 <div class="flex">
 
@@ -30,21 +28,6 @@
                       <i class="fas fa-dollar-sign"></i><span><%= service.price_rate %>/hour</span>
                     </div>
                   </div>
-
-                  <div class="container pt-4">
-                    <button type="button" class="btn btn-primary">
-                      <%= link_to "Edit this service", edit_service_path(service), class: "dark-font-link" %>
-                    </button>
-
-                    <button type="button" class="btn btn-primary">
-                      <%= link_to "Delete this service", service_path(service),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" },
-                      class: 'ml-3 text-danger' %>
-                    </button>
-                  </div>
-                </div>
-
                 <button type="button" class="btn btn-primary">
                   <%= link_to "Edit Service Offer", edit_service_path(service), class: "dark-font-link" %>
                 </button>
