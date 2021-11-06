@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.service = @service
     @booking.user = current_user
-    @booking.status = "Pending Validation"
     if @booking.save!
       redirect_to root_path, notice: 'Booking successful'
     else
