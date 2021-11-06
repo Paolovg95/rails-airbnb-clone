@@ -25,13 +25,13 @@
                   </div>
                 </div>
                 <button type="button" class="btn btn-primary">
-                  <%= link_to "Edit this service", edit_service_path(service), class: "dark-font-link" %>
+                  <%= link_to "Edit Service Offer", edit_service_path(service), class: "dark-font-link" %>
                 </button>
                 <button type="button" class="btn btn-danger">
-                  <%= link_to "Delete this service", service_path(service),
+                  <%= link_to "Delete Service Offer", service_path(service),
                   method: :delete,
                   data: { confirm: "Are you sure?" },
-                  class: 'ml-3 text-danger' %>
+                  class: 'dark-font-link' %>
                 </button>
                 <% if service.bookings.nil? %>
                   <p>You don't have any bookings yet</p>
