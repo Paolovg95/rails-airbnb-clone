@@ -33,6 +33,24 @@
                   data: { confirm: "Are you sure?" },
                   class: 'ml-3 text-danger' %>
                 </button>
+                <% if service.bookings.nil? %>
+                  <p>You don't have any bookings yet</p>
+                <% else %>
+                  <% service.bookings.each do |booking| %>
+                    <div class="services-bookings border mt-2">
+                      <p><i class="fas fa-exclamation-circle"></i> <strong><%= booking.start_date %> - <%= booking.end_date %></strong></p>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Manage bookings
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <%= link_to "Accept ", booking_path(booking, booking: {status: "Confirmed"}), method: :patch, class: "btn btn-success"%></li>
+                            <%= link_to "Decline", booking_path(booking, booking: {status: "Canceled"}), method: :patch, class: "btn btn-danger"%>
+                          </div>
+                        </div>
+                    </div>
+                  <% end %>
+                <% end  %>
               </div>
             </div>
           </div>
