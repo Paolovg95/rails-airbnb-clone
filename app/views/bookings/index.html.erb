@@ -17,6 +17,7 @@
               <div class="card-body py-4">
                 <h5 class="pb-3"><%= booking.service.user.first_name %> <%= booking.service.user.last_name %></h5>
                 <h5 class="pb-3">Booking ID:<%= booking.id %></h5>
+                <h5 class="pb-3">Status: <%= booking.status %></h5>
                 <div class="flex ">
                   <div class="flex text-left pb-3">
                     <span> Start Date: <%= booking.start_date %></span>
@@ -26,7 +27,7 @@
                   </div>
                 </div>
                 <button type="button" class="btn btn-primary mt-2">
-                  <%= link_to "Edit this service", edit_booking_path(booking), class: "dark-font-link" %>
+                  <%= link_to "Edit this Booking", edit_booking_path(booking), class: "dark-font-link" %>
                 </button>
                   <i class="fas fa-trash ml-3">
                     <%= link_to "Delete this service", booking_path(booking),

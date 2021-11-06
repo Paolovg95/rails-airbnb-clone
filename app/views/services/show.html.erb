@@ -3,11 +3,14 @@
 
     <div class="col-sm-6 pb-3">
       <div class="card align-items-center">
-        <% if @service.user.photo.attached? %>
-          <%= image_tag @service.user.photo, width: 200, height: 200, id: "profile-pic-post" %>
-        <% else %>
-          <%= cl_image_tag "https://res.cloudinary.com/dnczymjwi/image/upload/v1635257040/airbnb-clone/1.png", width: 100, height: 100 %>
-        <% end %>
+        <div class="row">
+          <% if @service.user.photo.attached? %>
+            <%= image_tag @service.user.photo, width: 100, height: 100, id: "profile-pic-post" %>
+          <% else %>
+            <%= cl_image_tag "https://res.cloudinary.com/dnczymjwi/image/upload/v1635257040/airbnb-clone/1.png", width: 100, height: 100 %>
+          <% end %>
+        </div>
+
         <div class="card-body py-4">
 
           <h5 class="pb-3">
