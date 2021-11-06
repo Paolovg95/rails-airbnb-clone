@@ -9,7 +9,7 @@
         <% @services.each do |service| %>
           <div class="col-sm-6 pb-3">
             <div class="card align-items-center">
-              <%= cl_image_tag "airbnb-clone/1.png", class: "profile-pic-services-display"%>
+              <%= image_tag current_user.photo, width: 200, height: 200, id: "profile-pic-post" %>
               <div class="card-body py-4">
                 <h5 class="pb-3"><%= service.service_title %></h5>
                 <div class="flex ">

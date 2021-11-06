@@ -9,7 +9,7 @@
         <% @bookings.each do |booking| %>
           <div class="col-sm-6 pb-3">
             <div class="card align-items-center">
-              <%= cl_image_tag "airbnb-clone/1.png", class: "profile-pic-services-display"%>
+               <%= image_tag booking.service.user.photo, width: 200, height: 200, id: "profile-pic-post" %>
               <div class="card-body py-4">
                 <h5 class="pb-3">Booking ID:<%= booking.id %></h5>
                 <div class="flex ">
