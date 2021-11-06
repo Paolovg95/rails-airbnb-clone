@@ -12,9 +12,10 @@
               <% if booking.service.user.photo.attached? %>
                 <%= image_tag booking.service.user.photo, width: 200, height: 200, id: "profile-pic-post" %>
               <% else %>
-                <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%= cl_image_tag "https://res.cloudinary.com/dnczymjwi/image/upload/v1635257040/airbnb-clone/1.png", width: 100, height: 100 %>
               <% end %>
               <div class="card-body py-4">
+                <h5 class="pb-3"><%= booking.service.user.first_name %> <%= booking.service.user.last_name %></h5>
                 <h5 class="pb-3">Booking ID:<%= booking.id %></h5>
                 <div class="flex ">
                   <div class="flex text-left pb-3">
