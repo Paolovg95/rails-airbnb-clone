@@ -9,25 +9,21 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.service = @service
     @booking.user = current_user
+    @booking.status = "Pending Validation"
     if @booking.save!
       redirect_to root_path, notice: 'Booking successful'
     else
       render :new
     end
   end
-
-
   def edit
     set_booking
   end
 
   def update
     set_booking
-    if @booking.update(booking_params)
-      redirect_to booking_path(@booking), notice: 'Booking was successfully updated.'
-    else
-      render :edit
-    end
+    @booking.update(booking_params)
+    redirect_to bookings_path(@booking), notice: 'Booking was successfully updated.'
   end
 
   def destroy
