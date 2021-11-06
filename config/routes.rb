@@ -6,14 +6,9 @@ Rails.application.routes.draw do
 
   resources :lists, only: [:show, :index]
 
-  resources :services ,only: [:new,:create,:show,:index, :edit] do
+  resources :services do
     resources :bookings, only: [:create]
   end
 
-  resources :bookings, only: [:index, :destroy]
-  # namespace :account do
-  #   resources :offers
-  #   resources :bookings
-  # end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :bookings, only: [:index,:destroy,:edit]
 end

@@ -1,64 +1,70 @@
-<h2 class="text-center"><%= @list.listing_type %> services</h2>
-  <div class="container ml-5">
-
-      <div class="col-5">
-          <%= form_tag list_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Enter a location or title"
-            %>
-            <%= submit_tag "Search", class: "btn btn-primary" %>
-          <% end %>
-      </div>
-
-  </div>
-
-  <div class="container mt-4 ml-4">
-    <div class="title text-center">
-
-
-      <div class="d-flex justify-space-between">
-        <div class="col-md-6">
-          <div class="row cards-services text-center">
-            <% @services.each do |service| %>
-              <div class="col-sm-6 pb-3">
-                  <div class="card align-items-center">
-                    <%= cl_image_tag "airbnb-clone/1.png", class: "profile-pic-services-display"%>
-                    <div class="card-body">
-                      <h5 class="card-title">Service</h5>
-                      <h5><%= service.service_title %></h5>
-                      <p class="card-text"> Location: <%= service.location %></p>
-                      <p class="card-text"> Price/hour: <%= service.price_rate %></p>
-                    </div>
-                      <button type="button" class="btn btn-primary mb-3">
-                        <%= link_to "Book service",  service_path(service), class: "dark-font-link" %>
-                      </button>
-                  </div>
-              </div>
+<div class="page-wrapper">
+  <h2 class="text-center"><%= @list.listing_type %> services<%= cl_image_tag "airbnb-clone/#{@list.listing_type}.png", class: "home-images"%></h2>
+    <div class="container ml-5">
+        <div class="col-5">
+            <%= form_tag list_path, method: :get do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Enter a location or title"
+              %>
+              <%= submit_tag "Search", class: "btn btn-primary mt-3" %>
             <% end %>
-          </div>
         </div>
 
-        <div class="col-md-6">
-          <!-- column 2 -->
+    </div>
 
-          <!-- Geocoded map -->
-          <div id="map-box" class="container mr-3">
-            <div id="map"
-                style="width: 100%; height: 400px;"
-                data-markers="<%= @markers.to_json %>"
-                data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="container mt-4 ml-4">
+      <div class="title text-center">
+
+
+        <div class="d-flex justify-space-between">
+          <div class="col-md-6">
+            <div class="row cards-services text-center">
+              <% @services.each do |service| %>
+                <div class="col-sm-6 pb-3">
+                    <div class="card align-items-center">
+                      <%= cl_image_tag "airbnb-clone/1.png", class: "profile-pic-services-display"%>
+                      <div class="card-body py-4">
+                        <h5 class="pb-3"><%= service.service_title %></h5>
+                        <div class="flex ">
+                          <div class="flex text-left pb-3">
+                            <i class="fas fa-location-arrow"></i><span><%= service.location %></span>
+                          </div>
+                          <div class="flex text-left">
+                            <i class="fas fa-dollar-sign"></i><span><%= service.price_rate %>/hour</span>
+                          </div>
+                        </div>
+                      </div>
+                        <button type="button" class="btn btn-primary mb-3">
+                          <%= link_to "Book service",  service_path(service), class: "dark-font-link" %>
+                        </button>
+                    </div>
+                </div>
+              <% end %>
             </div>
           </div>
 
-          <!-- Geocoded map -->
+          <div class="col-md-6">
+            <!-- column 2 -->
 
-          <!-- column 2 -->
+            <!-- Geocoded map -->
+            <div id="map-box" class="container mr-3">
+              <div id="map"
+                  style="width: 100%; height: 400px;"
+                  data-markers="<%= @markers.to_json %>"
+                  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+              </div>
+            </div>
+
+            <!-- Geocoded map -->
+
+            <!-- column 2 -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
+</div>
   <!--
 
   <div class="container mt-5">
