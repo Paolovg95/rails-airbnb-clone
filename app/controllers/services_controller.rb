@@ -11,6 +11,7 @@ class ServicesController < ApplicationController
   def create
     @service = Service.new(service_params)
     @service.user_id = current_user.id
+
     if @service.save!
       redirect_to root_path
     else
@@ -19,9 +20,9 @@ class ServicesController < ApplicationController
   end
 
   def show
-    @service = Service.find(params[:id])
-    @booking = Booking.new
+    find_service
 
+    @booking = Booking.new
     @services = Service.all
 
     @markers = @services.geocoded.map do |service|
@@ -30,10 +31,29 @@ class ServicesController < ApplicationController
         lng: service.longitude
       }
     end
+  end
 
+  def edit
+    find_service
+  end
+
+  def update
+    find_service
+    @service.update(service_params)
+    redirect_to service_path
+  end
+
+  def destroy
+    find_service
+    @service.destroy
+    redirect_to service_path
   end
 
   private
+
+  def find_service
+    @service = Service.find(params[:id])
+  end
 
   def service_params
     params.require(:service).permit(:service_title, :price_rate, :location, :list_id)

@@ -1,4 +1,4 @@
-  <div class="page-wrap">
+  <div class="page-wrap bg-white">
     <div class="banner bg-white">
       <div class="banner-body align-items-center">
         <div class="banner-text mr-4 pl-4 pr-4">
@@ -8,29 +8,29 @@
             <%= link_to "Sign Up", new_user_registration_path, class: "dark-font-link" %>
           </button>
         </div>
-        <div class="banner-image pl-4">
-          <%= cl_image_tag "airbnb-clone/g-banner3.jpg" %>
-        </div>
+          <div class="banner-image">
+            <%= cl_image_tag "airbnb-clone/quality.jpg", :width => 500, :height => 400%>
+          </div>
       </div>
     </div>
 
     <div class="container-solutions mb-4 bg-white">
-      <h2 class="text-center mb-2">Everything you need on the same page!</h2>
+      <h2 class="text-center mb-2" data-aos="zoom-out-up">Everything you need on the same page!</h2>
       <div class="row cards-solutions" data-aos="zoom-out-up">
-        <% List::SOLUTIONS.each do |solution| %>
-          <div class="col-4">
-            <div class="solution-card">
-              <%= cl_image_tag("airbnb-clone/#{solution}.png", :width => 150, :height => 0, class: "solution-images")%>
-              <p>Location Tracking: Wide range of professionals anywhere you are.</p>
+        <% List::SOLUTIONS_TEXT.each do |text| %>
+            <div class="col-4">
+              <div class="solution-card">
+                <%= cl_image_tag("airbnb-clone/#{List::SOLUTIONS_TEXT.index(text)}.solutions.png", :width => 150, :height => 0, class: "solution-images")%>
+                <p><%= text %></p>
+              </div>
             </div>
-          </div>
         <% end %>
       </div>
     </div>
 
     <div class="container mt-5">
       <div class="container-title">
-        <h2 class="text-center mb-2">Everything you need on the same page!</h2>
+        <h2 class="text-center mb-2">Services categories to find a professional</h2>
       </div>
       <div class="row cards mt-5" data-aos="flip-up">
         <% @lists.each do |list| %>

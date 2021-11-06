@@ -1,0 +1,15 @@
+en-au-ocker:
+  faker:
+    maintenance:
+      # New faker fields
+      descriptions:
+        - Bedrooms
+        - Living and Dining rooms
+        - Walls and Ceiling
+        - Kitchen
+        - Electrical systems
+        - Water systems
+      titles:
+        - Best Quality and Efficiency guaranteed!
+        - We get $%!# done FAST!
+        - Love what I do, best in what I do.

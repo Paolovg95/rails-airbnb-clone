@@ -1,16 +1,37 @@
-<h1 class="title">Your bookings</h1>
-<div class="cards">
-  <% @bookings.each do |booking| %>
-      <div class="service">
-        <%# <%= add service image %>
-        <div class="service-info">
-          <div>
-            <p>Service <%= booking.service.service_title %></p>
-            <p>Start: <%= booking.start_date %>
-            <p>Finish: <%= booking.end_date %>
+<div class="page-wrapper">
+  <div class="text-center">
+    <h2>Here are all your <strong>Bookings</strong>!</h2>
+  </div>
+
+
+    <div class="container mt-5">
+      <div class="row cards mt-5">
+        <% @bookings.each do |booking| %>
+          <div class="col-sm-6 pb-3">
+            <div class="card align-items-center">
+              <%= cl_image_tag "airbnb-clone/1.png", class: "profile-pic-services-display"%>
+              <div class="card-body py-4">
+                <h5 class="pb-3">Booking ID:<%= booking.id %></h5>
+                <div class="flex ">
+                  <div class="flex text-left pb-3">
+                    <span> Start Date: <%= booking.start_date %></span>
+                  </div>
+                  <div class="flex text-left">
+                    <span> End Date: <%= booking.end_date %></span>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary mt-2">
+                  <%= link_to "Edit this service", edit_booking_path(booking), class: "dark-font-link" %>
+                </button>
+                  <i class="fas fa-trash ml-3">
+                    <%= link_to "Delete this service", booking_path(booking),
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+                  </i>
+              </div>
+            </div>
           </div>
-          <%# <h2 class="price">Total price: <%= (booking.end_date - booking.start_date) * booking.service.price %>
-        </div>
+        <% end %>
       </div>
-  <% end %>
+    </div>
 </div>

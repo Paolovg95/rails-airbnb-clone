@@ -3,6 +3,7 @@
     <h2>Become a provider</h2>
     <%= simple_form_for([@list,@service]) do |f| %>
       <%= f.association :list, label_method: :listing_type, value_method: :id %>
+      <%= f.input :service_description  %>
       <%= f.input :service_title %>
       <%= f.input :location, placeholder: "Street address, city, country" %>
       <%= f.input :price_rate %>

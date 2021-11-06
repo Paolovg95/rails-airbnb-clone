@@ -1,0 +1,6 @@
+ <%= simple_form_for @service do |f| %>
+    <%= f.input :service_title %>
+    <%= f.input :price_rate %>
+    <%= f.input :location %>
+    <%= f.button :submit, "Modify your service", class: "btn btn-danger"%>
+<% end  %>

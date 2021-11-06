@@ -4,6 +4,7 @@ class User < ApplicationRecord
   ROLES = ["Client", "Provider"]
   has_many :services
   has_many :bookings
+  has_one_attached :photo
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 end
